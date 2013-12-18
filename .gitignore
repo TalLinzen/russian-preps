@@ -1,0 +1,8 @@
+.dropbox
+.Rapp.history
+.Rhistory
+.Rosxhistory
+*.pyc
+*.pyo
+*.swp
+*.swo

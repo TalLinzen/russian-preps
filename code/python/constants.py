@@ -1,10 +1,17 @@
 # -*- coding: utf-8 -*-
+
+# Author: Tal Linzen <linzen@nyu.edu>
+# License: BSD (3-clause)
+
+# Linzen, Kasyanenko, & Gouskova (2013). (Lexical and phonological 
+# variation in Russian prepositions, Phonology 30(3).)
+
 import os
 
-project_dir = os.path.expanduser('~/Dropbox/russian_preps')
-paradigms_file = os.path.join(project_dir, 'resources', 'paradigms.txt')
-yandex_shelf_file = os.path.join(project_dir, 'results', 'morph_searches',
-    'yandex.shelf')
+project_dir = os.environ['RUSS_PREPS_ROOT']
+paradigm_file = os.path.join(project_dir, 'resources', 'paradigms.txt')
+yandex_shelf_file = os.path.join(project_dir, 'results', 'yandex.shelf')
+rnc_shelf_file = os.path.join(project_dir, 'results', 'rnc.shelf')
 default_csv_dir = os.path.join(project_dir, 'csv')
 
 automatically_stressed_vowels = u'ё'
@@ -17,29 +24,23 @@ unvoiced_fricatives = u'сфшщцчх'
 voiced_fricatives = u'звж'
 nasals = u'мн'
 liquids = u'лp'
-# Same sonority for palatalized consonants?
-selkirk_sonority_scale = [unvoiced_stops, voiced_stops, unvoiced_fricatives,
-        voiced_fricatives, nasals, liquids]
 
-s = {
-        'cases': ['inst', 'gen'], 
-        'variants': [u'с', u'со'],
-        'transcribed_variants': ['s', 'so']
-    }
+# Selkirk, Elizabeth (1984). On the major class features and syllable theory. 
+# Should we have the same sonority for palatalized consonants?
+selkirk_sonority_scale = [unvoiced_stops, voiced_stops, unvoiced_fricatives, 
+                          voiced_fricatives, nasals, liquids]
 
-v = {
-        'cases': ['acc', 'prep'],
-        'variants': [u'в', u'во'],
-        'transcribed_variants': ['v', 'vo']
-    }
+s = {'cases': ['inst', 'gen'],
+     'variants': [u'с', u'со'],
+     'transcribed_variants': ['s', 'so']}
 
-k = {
-        'cases': ['dat'],
-        'variants': [u'к', u'ко'],
-        'transcribed_variants': ['k', 'ko']
-    }
+v = {'cases': ['acc', 'prep'],
+     'variants': [u'в', u'во'],
+     'transcribed_variants': ['v', 'vo']}
 
-google_api_key = 'AIzaSyAF_CRT6GLhnt0Jae9NvlhhmW25Ff4IL1Y'
+k = {'cases': ['dat'],
+     'variants': [u'к', u'ко'],
+     'transcribed_variants': ['k', 'ko']}
 
 def build_sonority_dict(self):
     self.sonority = {}

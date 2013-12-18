@@ -26,21 +26,20 @@ options(tikzLatexPackages = c(getOption('tikzLatexPackages'),
 
 black_and_white <- T
 theme_set(theme_bw())
-theme_update(
-        plot.margin=unit(rep(1, 4), 'lines'),
-        panel.grid.major=element_blank(),
-        panel.grid.minor=element_blank(),
-        axis.title.x=element_text(vjust=0),
-        axis.title.y=element_text(angle=90, vjust=0),
-        legend.position='right',
-        legend.key=element_rect(size=3, color='white'))
+theme_update(plot.margin=unit(rep(1, 4), 'lines'),
+             panel.grid.major=element_blank(), 
+             panel.grid.minor=element_blank(), 
+             axis.title.x=element_text(vjust=0),
+             axis.title.y=element_text(angle=90, vjust=0), 
+             legend.position='right',
+             legend.key=element_rect(size=3, color='white'))
 
 linetypes <- c('solid', 'dotted', 'dashed', 'longdash')
 
-axis_arguments <- list(name='CV rate',
-            limits=c(0, 1),
-            labels=c('0\\%', '50\\%', '100\\%'),
-            breaks=c(0, 0.5, 1))
+axis_arguments <- list(name='CV rate', 
+                       limits=c(0, 1),
+                       labels=c('0\\%', '50\\%', '100\\%'),
+                       breaks=c(0, 0.5, 1))
 
 epenth_x_scale <- do.call(scale_x_continuous, axis_arguments)
 epenth_y_scale <- do.call(scale_y_continuous, axis_arguments)
